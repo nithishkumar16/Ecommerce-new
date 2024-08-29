@@ -1,8 +1,10 @@
-.navbar{
+.navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Change to space-between for better alignment */
+    align-items: center; /* Align items vertically */
     padding: 16px;
     box-shadow: 0 1px 3px -2px black;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .nav-logo{
@@ -79,4 +81,44 @@
     font-size: 14px;
     background: red;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-menu {
+        flex-direction: column; /* Stack menu items vertically */
+        gap: 20px; /* Reduce gap */
+        width: 100%; /* Full width */
+        padding: 0; /* Remove padding */
+    }
+
+    .nav-login-cart {
+        margin-top: 10px; /* Add some space on top for better separation */
+        width: 100%; /* Full width */
+        justify-content: space-between; /* Space out items */
+    }
+
+    .nav-login-cart button {
+        width: 100px; /* Reduce button width */
+        height: 40px; /* Reduce button height */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo p {
+        font-size: 28px; /* Reduce logo text size */
+    }
+
+    .nav-menu {
+        font-size: 16px; /* Reduce menu font size */
+    }
+
+    .nav-login-cart button {
+        width: 80px; /* Further reduce button width */
+        height: 35px; /* Further reduce button height */
+    }
 }
