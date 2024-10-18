@@ -1,10 +1,10 @@
 .navbar {
     display: flex;
-    justify-content: space-between; /* Change to space-between for better alignment */
-    align-items: center; /* Align items vertically */
-    padding: 16px;
+    justify-content: space-around;
+    padding: 15px 0px;
     box-shadow: 0 1px 3px -2px black;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    align-items: center;
+
 }
 
 .nav-logo{
@@ -83,42 +83,88 @@
     color: white;
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the start */
+.nav-dropdown{
+    display: none;
+}
+
+@media (max-width: 1280px) {
+    .navbar{
+        padding: 12px 50px;
+    }
+    .nav-logo img{
+        width: 40px;
+    }
+    .nav-logo p{
+        font-size: 25px;
+    }
+    .nav-menu{
+        gap:30px;
+        font-size: 16px;
+    }
+    .nav-login-cart{
+        gap:30px;
+    }
+    .nav-login-cart button{
+        width: 120px;
+        height: 45px;
+        font-size: 16px;
+    }
+    .nav-cart-count{
+        margin-left: -40px;
+        font-size: 12px;
     }
 
-    .nav-menu {
-        flex-direction: column; /* Stack menu items vertically */
-        gap: 20px; /* Reduce gap */
-        width: 100%; /* Full width */
-        padding: 0; /* Remove padding */
+}
+
+@media(max-width:1024px){
+    .navbar{
+    padding: 12px 30px;
+    }
+    .nav-menu{
+    gap: 25px;
+    font-size: 14px;
     }
 
-    .nav-login-cart {
-        margin-top: 10px; /* Add some space on top for better separation */
-        width: 100%; /* Full width */
-        justify-content: space-between; /* Space out items */
+    .nav-login-cart button{
+    width: 80px;
+    height: 35px;
+    font-size: 14px;
     }
 
-    .nav-login-cart button {
-        width: 100px; /* Reduce button width */
-        height: 40px; /* Reduce button height */
+    .nav-login-cart img{
+    width: 30px;
+    }
+
+    .nav-cart-count{
+    width: 18px;
+    height: 18px;
     }
 }
 
-@media (max-width: 480px) {
-    .nav-logo p {
-        font-size: 28px; /* Reduce logo text size */
+@media(max-width:800px)
+{
+    .navbar{
+        padding:10px 0px;
     }
-
-    .nav-menu {
-        font-size: 16px; /* Reduce menu font size */
+    .nav-dropdown{
+        display: block;
+        width: 30px;
+        rotate: -90deg;
+        transition: 0.5s;
     }
-
-    .nav-login-cart button {
-        width: 80px; /* Further reduce button width */
-        height: 35px; /* Further reduce button height */
+    .nav-menu{
+        display: none;
+        height: 80px;
+        width: 100%;
+        position: absolute;
+        background-color: white;
+        justify-content: center;
+        top: 50px;
+    }
+    .nav-menu-visible{
+        display: flex;
+    }
+    .nav-dropdown.open{
+        transform: rotate(90deg);
     }
 }
